@@ -1,6 +1,3 @@
-node {
-  sh '/usr/local/mytool-$MYTOOL_VERSION/bin/start'
-}
 pipeline{
   agent any 
   environment {

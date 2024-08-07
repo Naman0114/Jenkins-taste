@@ -8,7 +8,7 @@ pipeline{
       
     }
   }
-    stage("Build docker container"){
+    stage("Build Docker Image "){
       steps{
         sh 'docker compose up -d'
         sh 'docker compose ps'

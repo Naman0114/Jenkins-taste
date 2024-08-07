@@ -13,6 +13,6 @@ pipeline{
         sh 'docker compose up -d'
         sh 'docker compose ps'
       }
-    }
   }
 }
+

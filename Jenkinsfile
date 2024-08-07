@@ -1,11 +1,14 @@
 pipeline{
   agent any
   stages{
-    stage("Build"){
-      steps{
-        sh 'docker compose –f docker-compose.yml run'
-        sh 'docker compose ps'
+    stage('Running Docker Container') {
+    withEnv(['VERSION=latest']) {
+      docker.withTool('docker') {
+        sh "docker-compose rm -f -s -v"
+        sh "docker-compose up -d"
       }
+    }
+    
   }
-  }
+ }
 }

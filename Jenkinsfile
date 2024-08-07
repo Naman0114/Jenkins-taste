@@ -7,7 +7,6 @@ pipeline{
     DOCKER_CERT_PATH = credentials('e84e667a-c1a5-4dbd-98f2-411ffaff656d')
     ENV_VAR = "ENV_VARIABLE"
   }
-  }
   stages {
     stage('Running Docker Container') {
       steps{
@@ -18,7 +17,7 @@ pipeline{
         }
       }
     }
- }
+    }
 }
 
 

@@ -1,8 +1,5 @@
 pipeline{
   agent any 
-  tools{
-    "Docker plugin"
-  }
   environment {
     DOCKER_CERT_PATH = credentials('e84e667a-c1a5-4dbd-98f2-411ffaff656d')
     ENV_VAR = "ENV_VARIABLE"

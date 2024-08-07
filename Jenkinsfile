@@ -1,13 +1,11 @@
 pipeline{
   agent{
-      docker{
-        image 'python:3.9.19-slim-bullseye'
-      }
+    docker
   }
   stages{
-    stage('Build'){
+    stage('Build Docker Image'){
       steps{
-        sh 'python --version'
+        sh 'docker compose up'
       }
     }
   }

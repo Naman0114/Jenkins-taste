@@ -8,9 +8,9 @@ pipeline{
       
     }
   }
-    stage("Build Docker Image "){
+    stage("Build"){
       steps{
-        sh 'docker compose up -d'
+        sh 'docker-compose –f docker-compose.yml run'
         sh 'docker compose ps'
       }
   }

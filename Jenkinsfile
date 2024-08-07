@@ -1,5 +1,15 @@
 pipeline{
-  agent any
+  agent any 
+  environment {
+    DOCKER_CERT_PATH = credentials('e84e667a-c1a5-4dbd-98f2-411ffaff656d')
+  }
+  stages {
+    stage('foo') {
+      steps {
+        sh "docker version" 
+      }
+    }
+  }
   stages{
     stage('Running Docker Container') {
       steps{

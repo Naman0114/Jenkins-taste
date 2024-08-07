@@ -1,15 +1,21 @@
 pipeline{
   agent any{
-    stages{
-      stage("build"){
-        steps{
-          script{
-            img = "httpd:2.4-alpine"
-            docker.images("${img}".run(-d -p 80:80)
-          }
+  stages{
+    stage('Build'){
+      agent{
+        docker{
+          image 'python:3.9.19-slim-bullseye'
         }
-        
       }
-    }
+      steps{
+        sh 'python --version'
+      }
   }
+            
+          }
+        
+        
+      
+    
+
 }
